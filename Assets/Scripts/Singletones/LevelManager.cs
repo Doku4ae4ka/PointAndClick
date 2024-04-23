@@ -10,6 +10,7 @@ public class LevelManager : Singleton<LevelManager>
     [SerializeField] private Timer _timer;
     
     private SaveLoadManager _saveLoadManager;
+    private AssetsManager _assetsManager;
     
     private int currentLevel;
     private int currentRetries;
@@ -18,10 +19,12 @@ public class LevelManager : Singleton<LevelManager>
     public event Action<bool> OnGamePaused;
     public event Action OnWinProcessStart;
     public event Action OnGameOverProcessStart;
+    public event Action OnLevelReload;
 
     private void Awake()
     {
         _saveLoadManager = SaveLoadManager.Instance;
+        _assetsManager = AssetsManager.Instance;
     }
 
     #region Actions
@@ -76,7 +79,9 @@ public class LevelManager : Singleton<LevelManager>
         _saveLoadManager.LoadFromJson();
         isGamePaused = true;
         PauseGame();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        OnLevelReload?.Invoke();
+        SceneManager.LoadScene("Game");
+        _assetsManager.isAssetsLoaded = false;
     }
     
     public void PauseGame()

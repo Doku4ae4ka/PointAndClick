@@ -1,0 +1,30 @@
+pluginManagement {
+    repositories {
+        **ARTIFACTORYREPOSITORY**
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+
+include ':launcher', ':unityLibrary'
+**INCLUDES**
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        **ARTIFACTORYREPOSITORY**
+        google()
+        mavenCentral()
+// Android Resolver Repos Start
+        def unityProjectPath = $/file:///**DIR_UNITYPROJECT**/$.replace("\\", "/")
+        maven {
+            url "https://artifactory.appodeal.com/appodeal" // Assets/Appodeal/Editor/NetworkConfigs/AdColonyDependencies.xml:11, Assets/Appodeal/Editor/NetworkConfigs/AdjustDependencies.xml:14, Assets/Appodeal/Editor/NetworkConfigs/AppLovinDependencies.xml:11, Assets/Appodeal/Editor/NetworkConfigs/AppodealDependencies.xml:10, Assets/Appodeal/Editor/NetworkConfigs/AppsFlyerDependencies.xml:10, Assets/Appodeal/Editor/NetworkConfigs/BidMachineDependencies.xml:15, Assets/Appodeal/Editor/NetworkConfigs/BidonDependencies.xml:12, Assets/Appodeal/Editor/NetworkConfigs/BigoAdsDependencies.xml:11, Assets/Appodeal/Editor/NetworkConfigs/DTExchangeDependencies.xml:11, Assets/Appodeal/Editor/NetworkConfigs/FirebaseDependencies.xml:10, Assets/Appodeal/Editor/NetworkConfigs/GoogleAdMobDependencies.xml:12, Assets/Appodeal/Editor/NetworkConfigs/IABDependencies.xml:10, Assets/Appodeal/Editor/NetworkConfigs/InMobiDependencies.xml:11, Assets/Appodeal/Editor/NetworkConfigs/IronSourceDependencies.xml:10, Assets/Appodeal/Editor/NetworkConfigs/MetaAudienceNetworkDependencies.xml:12, Assets/Appodeal/Editor/NetworkConfigs/MetaDependencies.xml:10, Assets/Appodeal/Editor/NetworkConfigs/MintegralDependencies.xml:12, Assets/Appodeal/Editor/NetworkConfigs/MyTargetDependencies.xml:11, Assets/Appodeal/Editor/NetworkConfigs/SentryDependencies.xml:7, Assets/Appodeal/Editor/NetworkConfigs/UnityDependencies.xml:11, Assets/Appodeal/Editor/NetworkConfigs/VungleDependencies.xml:12, Assets/Appodeal/Editor/NetworkConfigs/YandexDependencies.xml:10
+        }
+        mavenLocal()
+// Android Resolver Repos End
+        flatDir {
+            dirs "${project(':unityLibrary').projectDir}/libs"
+        }
+    }
+}
