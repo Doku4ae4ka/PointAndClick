@@ -1,5 +1,6 @@
 # Описание:
 [Тетствовое задание](https://docs.google.com/document/d/1sWQNosqufxOFCX7qO_Xsu9sIC7f6SH-UtT08NGZRkUo/edit?usp=sharing)
+
 простой проект в жанре "Find the differences@ с архитектурой построенной на Singletonах(🤢)
 
 # Технические вопросы:
