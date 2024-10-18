@@ -1,20 +1,19 @@
 # Описание:
-[Тетствовое задание](https://docs.google.com/document/d/1sWQNosqufxOFCX7qO_Xsu9sIC7f6SH-UtT08NGZRkUo/edit?usp=sharing)
+[Technical specification](https://docs.google.com/document/d/1sWQNosqufxOFCX7qO_Xsu9sIC7f6SH-UtT08NGZRkUo/edit?usp=sharing)
 
-простой проект в жанре "Find the differences" с архитектурой построенной на Singletonах(🤢)
+a simple project in the genre of "Find the differences" with architecture built on Singleton(🤢)
 
-Срок: 3 суток
+Duration: 3 days
 
-# Технические вопросы:
-Приложение не будет билдиться без Admob App Id, даже если сделать "заглушку" вместо рекламы, т.к. в любом случае если в приложение интегрирован SDK Appodeal, проект не собереться.
+# Technical issues:
+The application will not be built without Admob App Id, even if you make a "stub" instead of advertising, because in any case, if the Appodeal SDK is integrated into the application, the project will not come together.
 
 
-# На будущее:
+# For the future:
 
-- довольно просто можно реализовать сохранения через PlayerPrefs
+- it is quite simple to implement saving via PlayerPrefs
 
-- Так же можно воспользоваться паттерном фабрика для создания уровня на основе ScriptbleObject, что ускорит дальнейшее создание уровней и упростит реализацию дополнительных механик, например, уровней сложности, от которых будет зависеть количество необходимых отличий (easy - 5, medium - 7, hard - 10) и тд.
-- Для улучшения архитектуры проекта, можно воспользоваться Zenject, чтобы убрать зависимости, тем самым сделать проект более простым в масштабируемости. 
-- Zenject позволит избавиться от «пагубных Singletonов»
-- С Zenjectом будет проще интегрировать Adressables в проект
-
+- You can also use the factory pattern to create a level based on ScriptbleObject, which will speed up further level creation and simplify the implementation of additional mechanics, for example, difficulty levels, on which the number of necessary differences will depend (easy - 5, medium - 7, hard - 10), etc.
+- To improve the architecture of the project, you can use Zenject to remove dependencies, thereby making the project easier to scale. 
+- Zenject will get rid of "harmful Singletons"
+- With Zenject it will be easier to integrate Adressables into the project
