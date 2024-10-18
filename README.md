@@ -1,4 +1,4 @@
-# Описание:
+# Description:
 [Technical specification](https://docs.google.com/document/d/1sWQNosqufxOFCX7qO_Xsu9sIC7f6SH-UtT08NGZRkUo/edit?usp=sharing)
 
 a simple project in the genre of "Find the differences" with architecture built on Singleton(🤢)
